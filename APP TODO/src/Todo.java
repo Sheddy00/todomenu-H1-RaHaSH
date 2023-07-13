@@ -1,14 +1,32 @@
+import java.sql.Timestamp;
+import java.util.Date;
+
 public class Todo {
     private String title;
     private String description;
     private int priority;
+    private Date deadline;
+
+
+    public Date getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(Date deadline) {
+        this.deadline = deadline;
+    }
 
     // Constructeur
-    public Todo(String title, String description, int priority) {
+    public Todo(String title, String description, int priority,Date  deadline) {
         this.title = title;
         this.description = description;
         this.priority = priority;
+        this.deadline= deadline;
+
+
     }
+
+
 
     // Getters et Setters
     public String getTitle() {
