@@ -6,12 +6,12 @@ public class UserCrud {
     public static void addTodo(Todo todo) {
         Connection connection = DBConnection.getConnection();
         try {
-            String query = "INSERT INTO todo (title, description,deadline) VALUES (?, ?, ?)";
+            String query = "INSERT INTO todo (title, description,priotity,deadline) VALUES (?,?,?,?)";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, todo.getTitle());
             statement.setString(2, todo.getDescription());
             statement.setInt(3, todo.getPriority());
-            statement.setDate(3, (Date) todo.getDeadline());
+            statement.setDate(4, (Date) todo.getDeadline());
             statement.executeUpdate();
             System.out.println("Todo added successfully!");
         } catch (SQLException e) {
